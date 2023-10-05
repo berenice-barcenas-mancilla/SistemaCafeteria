@@ -1,0 +1,33 @@
+{% extends 'usr_navbar.html' %}
+{% block content %}
+
+<div class="cotn_principal">
+    <div class="cont_centrar">
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-12">
+                    <table class="table text-center table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fecha Pedido</th>
+                                <th scope="col">Total Pedido</th>
+                                <th scope="col">Estatus Pedido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pedido in listpedidos %}
+                            <tr>
+                                <td>{{ pedido[1] }}</td>
+                                <td>{{ pedido[2] }}</td>
+                                <td>{{ pedido[3] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

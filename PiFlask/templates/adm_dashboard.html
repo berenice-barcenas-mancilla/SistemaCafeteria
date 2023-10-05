@@ -1,0 +1,35 @@
+
+{% extends 'adm_navbar.html' %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div >
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Éxito!',
+                    text: '{{ messages[0] }}',
+                    position: 'top-end', 
+                    showConfirmButton: false, 
+                    timer: 2500 
+                  });
+            </script>
+        </div>
+    {% endif %}
+    {% endwith %}
+    <!-- HEADER SECTION -->
+    <header id="header" class="header w-100">
+        <div class="header__top w-100">
+            <img src="https://res.cloudinary.com/osdev/image/upload/v1581541390/xand/indian_e748ja.jpg"
+                alt="xand-hero-background" id="header-img">
+            <span class="header__top-text text-center">
+                Una vez más, bienvenido(a) a bordo a esta emocionante aventura culinaria. 
+                ¡Vamos a cocinar con pasión y maravillar con nuestras creaciones!
+
+
+            </span>
+        </div>
+    </header>
+        
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'adm_navbar.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5 ">
+        <div class="col-12">
+
+            <table class="table  table-hover ">
+                <thead>
+                    <tr>
+                        <th scope="col">Matrícula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha de penalizacion</th>
+                        <th scope="col">Estatus</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for penalizacion in listPenalizacion %}
+                    <tr>
+                        <td>{{ penalizacion[0] }}</td>
+                        <td>{{ penalizacion[1] }}</td>
+                        <td>{{ penalizacion[2] }}</td>
+                        <td>{{ penalizacion[3] }}</td>
+
+
+                        <td>
+                            <a href="/reactivar/{{penalizacion[4]}}" class="btn btn-outline-primary">
+                                <i class="bi bi-pencil-fill"></i> Reactivar
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
